@@ -1,0 +1,29 @@
+{
+    "info": {
+      "version": "1.0.0",
+      "title": "My Server",
+      "description": "My Server API documentation"
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "Test",
+        "description": "Test operations"
+      }
+    ],
+    "paths": {
+      "/": {
+        "get": {
+          "tags": ["Test"],
+          "summary": "Test endpoint",
+          "responses": {
+            "200": {
+              "description": "Successful operation"
+            }
+          }
+        }
+      }
+    }
+  }
+  

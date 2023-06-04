@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+//Codigo, Nome, Sobrenome, Data de Nascimento, Telefone, Endereço, Cidade, Estado, Status (Ativo ou Inativo).
+
+model User {  
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  email     String   @unique  
+  name      String
+  lastName  String
+  birthDate DateTime
+  phone     String
+  address   String
+  city      String
+  state     String
+  status    Boolean
+  profilePicture     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
